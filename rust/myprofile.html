@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <!-- Tailwind CSS CDN for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for smooth scrolling and Inter font */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+        }
+        /* Styling for the vertical navigation links */
+        .vertical-nav-link {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px; /* ขนาดไอคอน */
+            height: 50px; /* ขนาดไอคอน */
+            border-radius: 9999px; /* ทำให้เป็นวงกลม */
+            margin-bottom: 1rem; /* ระยะห่างระหว่างไอคอน */
+            color: #333; /* สีไอคอนเริ่มต้น */
+            font-size: 1.5rem; /* ขนาดไอคอน */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* เงาเล็กน้อย */
+        }
+        .vertical-nav-link.active {
+            background-color: #007bff; /* สีน้ำเงินสำหรับไอคอนที่ใช้งานอยู่ */
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* เงาที่ชัดขึ้น */
+            transform: scale(1.1); /* ขยายเล็กน้อยเมื่อใช้งาน */
+        }
+        .vertical-nav-link:hover:not(.active) {
+            background-color: #e2e8f0; /* สีเมื่อโฮเวอร์ */
+        }
+
+        /* Adjust padding for sections to account for fixed navbar on left */
+        section {
+            padding-left: 100px; /* เว้นพื้นที่สำหรับ Navbar ทางซ้าย */
+            padding-top: 4rem; /* ระยะห่างด้านบนเพื่อความสวยงาม */
+            min-height: calc(100vh - 8rem); /* กำหนดความสูงขั้นต่ำให้เต็มจอ - (padding top + padding bottom) */
+        }
+
+        /* Special styling for the main hero section to mimic the image's background */
+        .hero-background {
+            background: linear-gradient(to bottom, #f0f4f8, #ffffff); /* ไล่สีจากฟ้าอ่อนไปขาว */
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Add a subtle overlay to mimic the image's soft background */
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Using a subtle image or pattern here could further mimic the original image */
+            /* For now, a subtle radial gradient or transparency is used */
+            background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar-vertical {
+                position: relative; /* On mobile, navbar can be static or at top */
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+                flex-direction: row; /* Arrange horizontally on mobile */
+                justify-content: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                margin-bottom: 1rem;
+                padding-left: 0; /* Remove left padding for mobile nav */
+            }
+            .vertical-nav-link {
+                margin: 0 0.5rem; /* Adjust margin for horizontal layout */
+            }
+            section {
+                padding-left: 1rem; /* ลด padding ซ้ายบนมือถือ */
+                padding-right: 1rem;
+                padding-top: 1rem; /* ลด padding top เพราะ nav ไม่ใช่ fixed top */
+                min-height: auto; /* Allow height to adjust naturally */
+            }
+            .hero-content {
+                padding-left: 0; /* Remove left padding for mobile hero */
+                text-align: center;
+            }
+            .social-icons-hero {
+                justify-content: center; /* Center social icons on mobile */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Vertical Navigation Bar -->
+    <nav class="navbar-vertical fixed top-0 left-0 h-screen w-20 bg-white shadow-lg z-50 flex flex-col items-center justify-center py-4 px-2 hidden md:flex">
+        <!-- Nav Link: Home -->
+        <a href="#home-section" class="vertical-nav-link active" title="Home">
+            🏠
+        </a>
+        <!-- Nav Link: About -->
+        <a href="#brandon-about" class="vertical-nav-link" title="About Me">
+            👤
+        </a>
+    </nav>
+
+    <!-- Mobile Navigation Bar (Horizontal) -->
+    <nav class="navbar-vertical fixed top-0 left-0 w-full bg-white shadow-md z-50 flex md:hidden flex-row justify-around py-3 px-2">
+        <a href="#home-section" class="vertical-nav-link w-12 h-12 m-0 active" title="Home">🏠</a>
+        <a href="#brandon-about" class="vertical-nav-link w-12 h-12 m-0" title="About Me">👤</a>
+    </nav>
+
+
+    <!-- Home/Hero Section - Mimicking the uploaded image -->
+    <section id="home-section" class="hero-background min-h-screen flex items-center justify-center relative p-8">
+        <!-- Content within the hero section -->
+        <div class="z-10 text-gray-900 text-center md:text-left p-4 rounded-lg">
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight">Kunanont Thinsaigam</h1>
+            <!-- Removed the line "I'm Designer" -->
+            <div class="social-icons-hero flex space-x-6 text-gray-600">
+                <!-- Only Facebook link is kept -->
+                <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-3xl hover:text-blue-600 transform hover:scale-110 transition duration-300" title="Facebook">
+                    <!-- Facebook icon (placeholder) -->
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.811c-3.273 0-4.189 1.637-4.189 4.074v2.926z"/></svg>
+                </a>
+            </div>
+            <!-- This image is placed here to mimic the large background figure from the reference -->
+            <img src="https://i.imgflip.com/9xuwup.jpg" alt="A cat giving a thumbs up while looking sad" class="absolute right-0 top-1/2 transform -translate-y-1/2 opacity-10 hidden lg:block w-full h-full object-cover" style="z-index: 0;">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="brandon-about" class="container mx-auto p-8 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 text-blue-700">About Kunanont Thinsaigam</h2>
+        <div class="bg-white shadow-lg rounded-xl p-8 mb-12">
+            <h3 class="text-3xl font-semibold text-gray-900 mb-2">Who I Am</h3>
+            <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                มาจากโรงเรียนสาธิตเกษตรพหุภาษา เรียนที่นั่นตั้งแต่ ป.1 ชอบวาดรูป เล่นกีฬาพอใช้ได้ เล่นกีฬาได้เกือบทุกประเภท อาทิ ฟุตบอล ฟุตซอล บาสเกตบอล วอลเลย์บอล ตะกร้อ เป็นต้น
+            </p>
+        </div>
+    </section>
+
+    <!-- JavaScript to handle active navigation link -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.vertical-nav-link');
+            const sections = document.querySelectorAll('section');
+
+            // Function to update active nav link based on scroll position
+            const updateNavLinkActiveState = () => {
+                let currentActiveSectionId = '';
+                // Adjusted offset for vertical navbar on larger screens
+                const navOffset = window.innerWidth >= 768 ? 80 : 0; // 80px for desktop nav width, 0 for mobile
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navOffset;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                        currentActiveSectionId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkTargetId = link.getAttribute('href').substring(1);
+
+                    if (linkTargetId === currentActiveSectionId) {
+                        link.classList.add('active');
+                    }
+                    // Handle "Home" link specifically if at the very top of the page
+                    if (window.scrollY === 0 && linkTargetId === 'home-section') {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            // Event listeners for scroll and click on nav links
+            window.addEventListener('scroll', updateNavLinkActiveState);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Remove active from all links
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    // Add active to the clicked link
+                    e.currentTarget.classList.add('active');
+                });
+            });
+
+            // Initial check on load
+            updateNavLinkActiveState();
+        });
+    </script>
+</body>
+</html>
+

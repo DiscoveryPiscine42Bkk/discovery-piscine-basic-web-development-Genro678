@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Exercise 05</title>
+    <!-- Tailwind CSS CDN for basic styling and utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font, Inter is suitable for Canvas */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+            /* Ensure body covers full viewport and centers content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Make body full viewport height */
+            padding: 1.5rem; /* Add padding all around */
+            box-sizing: border-box; /* Include padding and border in element's total size */
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+
+        /* Container for the table, to center it and control overall size */
+        .table-wrapper {
+            width: 100%; /* Take full width of parent */
+            max-width: 600px; /* Limit maximum width of the "box" on large screens */
+            background-color: #ffffff; /* White background for the table */
+            border-radius: 0.75rem; /* Rounded corners for the outer box */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow for depth */
+            overflow: hidden; /* Ensure rounded corners clip content */
+        }
+
+        /* Table specific styles for two-column layout */
+        table {
+            width: 100%; /* Table uses full width */
+            border-collapse: separate; /* Allow border-radius on individual cells */
+            border-spacing: 0; /* Remove space between cells */
+        }
+
+        /* Cell styling */
+        td {
+            padding: 1.5rem; /* Initial padding for cells */
+            text-align: center; /* Center text */
+            font-weight: 500; /* Font weight */
+            color: #374151; /* Text color */
+            /* Responsive font sizes */
+            font-size: 1.125rem; /* Initial font size (text-lg in Tailwind) */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) { /* For medium and smaller screens */
+            td {
+                padding: 1.25rem; /* Slightly reduce padding */
+                font-size: 1rem; /* Reduce font size */
+            }
+        }
+
+        @media (max-width: 480px) { /* For small screens (mobile) */
+            td {
+                padding: 1rem; /* Further reduce padding */
+                font-size: 0.875rem; /* Further reduce font size */
+            }
+        }
+
+        /* Background colors and borders for specific cells */
+        .cell-one {
+            background-color: #a2edff; /* Color for the first cell */
+            border-right: 1px solid rgba(0, 0, 0, 0.1); /* Subtle divider */
+            border-top-left-radius: 0.75rem; /* Top-left rounded corner */
+            border-bottom-left-radius: 0.75rem; /* Bottom-left rounded corner */
+        }
+
+        .cell-two {
+            background-color: #e3eb7d; /* Color for the second cell */
+            border-top-right-radius: 0.75rem; /* Top-right rounded corner */
+            border-bottom-right-radius: 0.75rem; /* Bottom-right rounded corner */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the centered and responsive table -->
+    <div class="table-wrapper">
+        <table>
+            <tbody>
+                <tr>
+                    <!-- First cell with content and color -->
+                    <td class="cell-one">
+                        1+1=2
+                    </td>
+                    <!-- Second cell with content and color -->
+                    <td class="cell-two">
+                        สวัสดีครับ
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

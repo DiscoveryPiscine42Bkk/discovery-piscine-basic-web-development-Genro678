@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piscine Web</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font if desired, though Inter is default for Canvas */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 space-y-8">
+    <div class="text-center">
+        <!-- Display "Piscine Web" text, larger and centered -->
+        <h1 class="text-5xl md:text-7xl lg:text-9xl font-extrabold text-blue-700 leading-tight rounded-xl p-4 shadow-lg bg-white bg-opacity-90">
+            Piscine Web
+        </h1>
+    </div>
+
+    <!-- Section for displaying images -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-4xl">
+        <!-- Image provided by the user with updated link -->
+        <div class="flex-shrink-0 w-full md:w-1/2 flex justify-center items-center">
+            <a href="https://youtu.be/5garvlzBpaI?si=ZLqkZQNy5UardCzn" class="block rounded-lg shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-300 ease-in-out overflow-hidden">
+                <img src="https://i.imgflip.com/9xqqwn.jpg" title="made at imgflip.com" alt="Meme from Imgflip" class="w-full h-auto object-contain"/>
+            </a>
+        </div>
+        <!-- You can add a second image here if needed -->
+    </div>
+</body>
+</html>

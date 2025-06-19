@@ -1,0 +1,77 @@
+<!DOCTYPE file>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* The specific pink background color */
+            background-color: #FFC0CB; /* A lovely shade of pink! */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <div class="container mx-auto p-4 flex-grow">
+        <!-- Main title: white, centered, bigger, with a special character -->
+        <h1 class="text-white text-5xl md:text-6xl font-bold text-center my-8 md:my-12 py-4 px-6 bg-pink-600 bg-opacity-70 rounded-xl shadow-lg animate-pulse">
+            Basics
+        </h1>
+
+        <!-- Section for online shop images and links -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 my-12">
+            <!-- First online shop -->
+            <div class="flex flex-col items-center p-4 bg-white bg-opacity-80 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <!-- Link for the first shop, wrapping the image -->
+                <a
+                    href="https://shopee.co.th/หนังสือ-Boxset-Slam-Dunk-BIGBOOK-(SET-A)-ผู้แต่ง-Takehiko-Inoue-สนพ.NED-หนังสือมังงะ-MG-NED5-i.1161839041.29481888322?sp_atk=15df9016-54b2-47d6-b655-a6e0149b7721&xptdk=15df9016-54b2-47d6-b655-a6e0149b7721"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block"
+                >
+                    <!-- Image for an online shop, updated to the specified URL and larger fixed size, using object-contain -->
+                    <img
+                        src="https://down-th.img.susercontent.com/file/th-11134275-7ras9-m84hvfxkrl66f1.webp"
+                        alt="Image of Slam Dunk Boxset"
+                        class="rounded-md border border-gray-200 w-[400px] h-[300px] object-contain"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x300/F472B6/FFFFFF?text=ไม่พบรูปภาพ';"
+                    >
+                </a>
+            </div>
+
+            <!-- Second online shop (right side) -->
+            <div class="flex flex-col items-center p-4 bg-white bg-opacity-80 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <!-- Link for the second shop, wrapping the image (updated to the specified URL) -->
+                <a
+                    href="https://shopee.co.th/(พร้อมส่ง)หนังสือ-Boxset-Slam-Dunk-BIGBOOK-(SET-A)-(SET-B)-Takehiko-Inoue-สแลมดังค์-i.943475211.18591899663?sp_atk=2415d577-adad-4c8e-a056-3b471e5b6986&xptdk=2415d577-adad-4c8e-a056-3b471e5b6986"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block"
+                >
+                    <!-- Image for the second online shop (updated to the specified URL and larger fixed size, using object-contain) -->
+                    <img
+                        src="https://down-th.img.susercontent.com/file/th-11134207-7qul9-lkg9docpdu9nb8.webp"
+                        alt="Image of Slam Dunk Boxset B"
+                        class="rounded-md border border-gray-200 w-[400px] h-[300px] object-contain"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x300/F472B6/FFFFFF?text=ไม่พบรูปภาพ';"
+                    >
+                </a>
+            </div>
+        </div>
+
+        <!-- The horizontal line has been removed -->
+
+    </div>
+
+    <!-- Footer section with copyright information -->
+    <footer class="p-4 text-right">
+        <p class="italic font-mono text-gray-700 text-sm md:text-base">
+            &copy; wil 2025
+        </p>
+    </footer>
+</body>
+</html>
